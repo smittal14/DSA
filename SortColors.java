@@ -1,5 +1,7 @@
 /*
 https://leetcode.com/problems/sort-colors/
+
+Using : Dutch National Flag Algorithm OR 3-way Partitioning
 */
 class SortColors {
     public void sortColors(int[] nums) {
