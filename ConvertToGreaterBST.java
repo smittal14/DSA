@@ -37,16 +37,13 @@ During descending order travel
 */
 
 class ConvertToGreaterBST {    
-    int prev = 0;
     public TreeNode convertBST(TreeNode root) {
-        helper(root);
+        helper(root,0);
         return root;
     }
-    public void helper(TreeNode root) {
-        if (root == null) return;
-        convertBST(root.right);
-        root.val = prev + root.val;
-        prev  = root.val;
-        convertBST(root.left);
+    public int helper(TreeNode root, int prev) {
+        if (root == null) return prev;
+        root.val = root.val + helper(root.right,prev);
+        return helper(root.left,root.val);
     }
 }
